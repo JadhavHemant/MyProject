@@ -9,3 +9,4 @@ class Employee(models.Model):
 
 class City(models.Model):
     city_name=models.CharField(max_length=100)    
+    city_village=models.CharField(max_length=100)

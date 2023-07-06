@@ -6,3 +6,5 @@ class Employee(models.Model):
     employee_code=models.CharField(max_length=200)
     designation=models.CharField(max_length=200)
     salary=models.FloatField()
+    class Meta:
+        db_table="employeestbl"

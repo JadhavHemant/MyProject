@@ -8,4 +8,8 @@ class Employee(models.Model):
     salary=models.FloatField()
 
 class City(models.Model):
-    city_name=models.CharField(max_length=100)    
+    city_name=models.CharField(max_length=100)  
+    
+class Student(models.Model):
+    student_name=models.CharField(max_length=100)
+          

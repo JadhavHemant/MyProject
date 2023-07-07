@@ -19,5 +19,9 @@ class State(models.Model):
 class Student(models.Model):
     student_name=models.CharField(max_length=100)
 
+<<<<<<< HEAD
       
 >>>>>>> 0cc9f2a88b241467874cefa63a3a2d74636b0153
+=======
+    
+>>>>>>> 4804960173692685c3974b22b411fd35769a5ee1

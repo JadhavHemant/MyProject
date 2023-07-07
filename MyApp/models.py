@@ -12,4 +12,6 @@ class City(models.Model):
     
 class Student(models.Model):
     student_name=models.CharField(max_length=100)
-          
+
+class Studentdata(models.Model):
+    Studentda=models.CharField(max_length=100)         

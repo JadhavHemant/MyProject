@@ -19,3 +19,6 @@ class CityModel(models.Model):
 class Student(models.Model):
     student_name=models.CharField(max_length=100)
 
+class Github(models.Model):
+    Git_Hub=models.CharField(max_length=100)
+    

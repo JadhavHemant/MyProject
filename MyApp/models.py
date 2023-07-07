@@ -7,7 +7,7 @@ class Employee(models.Model):
     designation=models.CharField(max_length=200)
     salary=models.FloatField()
 
-class City(models.Model):
+class CityModel(models.Model):
     city_name=models.CharField(max_length=100)  
     
 class Student(models.Model):

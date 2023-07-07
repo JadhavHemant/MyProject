@@ -8,7 +8,16 @@ class Employee(models.Model):
     salary=models.FloatField()
 
 class City(models.Model):
+<<<<<<< HEAD
     city_name=models.CharField(max_length=100) 
 
 class State(models.Model):
     state_name=models.CharField(max_length=100)       
+=======
+    city_name=models.CharField(max_length=100)  
+    
+class Student(models.Model):
+    student_name=models.CharField(max_length=100)
+
+      
+>>>>>>> 0cc9f2a88b241467874cefa63a3a2d74636b0153

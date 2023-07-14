@@ -30,6 +30,7 @@ from MyApp import DesignationsRestApi
 from MyApp import UserDetailsRestApi
 from MyApp import QualiRestApi
 from MyApp import UserExperianceRestApi
+from MyApp import UserProfessionalExpertiseRestApi
 
 urlpatterns = [
     
@@ -74,6 +75,12 @@ urlpatterns = [
     
     path('api/userexperiance', UserExperianceRestApi.UserExperianceApi.as_view()),
     path('api/userexperiance/<int:pk>/', UserExperianceRestApi.UserExperianceUpdateDeleteApi.as_view()),
+    
+    path('api/userproexp', UserProfessionalExpertiseRestApi.UserProfessionalExpertiseApi.as_view()),
+    path('api/userproexp/<int:pk>/', UserProfessionalExpertiseRestApi.UserProfessionalExpertiseUpdateDeleteApi.as_view()),
+     
+    # path('api/', UserProfessionalExpertiseRestApi.UserProfessionalExpertiseApi.as_view()),
+    # path('api/userexperiance/<int:pk>/', UserProfessionalExpertiseRestApi.UserProfessionalExpertiseUpdateDeleteApi.as_view()),
      
     
     

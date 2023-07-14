@@ -80,7 +80,7 @@ class GendersSerializer(serializers.ModelSerializer):
         
 # ---------------------------Designations Serializer ------------------------
 
-class GendersSerializer(serializers.ModelSerializer):
+class DesignationSerializer(serializers.ModelSerializer):
     class Meta:
         model=DesignationModel
         fields=['designation','flag'] 

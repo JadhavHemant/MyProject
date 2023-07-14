@@ -25,23 +25,43 @@ from MyApp import LocationRestApi
 from MyApp import QualificationsRestApi
 from MyApp import SpecializationsRestApi
 from MyApp import RolesRestApi
-
-
+from MyApp import GendersRestApi
+from MyApp import DesignationsRestApi
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    
     path('api/topic', TopicRestApi.TopicApi.as_view()),
     path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
+    
     path('api/content',ContentRestApi.ContentApi.as_view()),
-    # path('api/content/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
+    path('api/content/<int:pk>/', ContentRestApi.ContentUpdateDeleteApi.as_view()),
+    
+    path('api/postcate', PostcategoriesApis.PostCategoryApi.as_view()),
+    path('api/postcate/<int:pk>/', PostcategoriesApis.PostCategoryUpdateDeleteApi.as_view()),
+    
+    path('api/state', StatesRestApi.StateApi.as_view()),
+    path('api/state/<int:pk>/', StatesRestApi.StateUpdateDeleteApi.as_view()),
+   
+    path('api/city', CityRestApi.CityApi.as_view()),
+    path('api/city/<int:pk>/', CityRestApi.CityUpdateDeleteApi.as_view()),
+   
+    path('api/location', LocationRestApi.LocationApi.as_view()),
+    path('api/location/<int:pk>/', LocationRestApi.LocationUpdateDeleteApi.as_view()),
+    
+    path('api/quali', QualificationsRestApi.QualiApi.as_view()),
+    path('api/quali/<int:pk>/', QualificationsRestApi.QualiUpdateDeleteApi.as_view()),
+    
+    path('api/specialzation', SpecializationsRestApi.SpecializationApi.as_view()),
+    path('api/specialzation/<int:pk>/', SpecializationsRestApi.SpecializationUpdateDeleteApi.as_view()), 
+    
     path('api/role', RolesRestApi.RoleApi.as_view()),
-    # path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
-    # path('api/topic', TopicRestApi.TopicApi.as_view()),
-    # path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
-    # path('api/topic', TopicRestApi.TopicApi.as_view()),
-    # path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
-    # path('api/topic', TopicRestApi.TopicApi.as_view()),
-    # path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
-    # path('api/topic', TopicRestApi.TopicApi.as_view()),
-    # path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
+    path('api/role/<int:pk>/', RolesRestApi.RoleUpdateDeleteApi.as_view()),
+    
+    path('api/gender', GendersRestApi.GendedrApi.as_view()),
+    path('api/gender/<int:pk>/', GendersRestApi.GendedrUpdateDeleteApi.as_view()),
+    
+    path('api/desig', DesignationsRestApi.DesignationApi.as_view()),
+    path('api/desig/<int:pk>/', DesignationsRestApi.DesignationUpdateDeleteApi.as_view()),
+    
+    
 ]

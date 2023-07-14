@@ -17,11 +17,31 @@ Including another URLconf
 # from django.contrib import admin
 from django.urls import path
 from MyApp import TopicRestApi
+from MyApp import ContentRestApi
+from MyApp import PostcategoriesApis
+from MyApp import StatesRestApi
+from MyApp import CityRestApi
+from MyApp import LocationRestApi
+from MyApp import QualificationsRestApi
+from MyApp import SpecializationsRestApi
+from MyApp import RolesRestApi
+
+
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('api/topic', TopicRestApi.TopicApi.as_view()),
     path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
-    
-    
+    path('api/content',ContentRestApi.ContentApi.as_view()),
+    # path('api/content/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
+    path('api/role', RolesRestApi.RoleApi.as_view()),
+    # path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
+    # path('api/topic', TopicRestApi.TopicApi.as_view()),
+    # path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
+    # path('api/topic', TopicRestApi.TopicApi.as_view()),
+    # path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
+    # path('api/topic', TopicRestApi.TopicApi.as_view()),
+    # path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
+    # path('api/topic', TopicRestApi.TopicApi.as_view()),
+    # path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
 ]

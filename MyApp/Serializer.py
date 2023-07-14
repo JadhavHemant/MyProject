@@ -24,7 +24,7 @@ class PostcategoriesSerializer(serializers.ModelSerializer):
         
 # ---------------------------States Serializer ------------------------
 
-class PostcategoriesSerializer(serializers.ModelSerializer):
+class StateSerializer(serializers.ModelSerializer):
     class Meta:
         model=StatesModel
         fields=['state_Name','flag']     

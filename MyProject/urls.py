@@ -27,6 +27,9 @@ from MyApp import SpecializationsRestApi
 from MyApp import RolesRestApi
 from MyApp import GendersRestApi
 from MyApp import DesignationsRestApi
+from MyApp import UserDetailsRestApi
+from MyApp import QualiRestApi
+from MyApp import UserExperianceRestApi
 
 urlpatterns = [
     
@@ -62,6 +65,17 @@ urlpatterns = [
     
     path('api/desig', DesignationsRestApi.DesignationApi.as_view()),
     path('api/desig/<int:pk>/', DesignationsRestApi.DesignationUpdateDeleteApi.as_view()),
+
+    path('api/userdetails', UserDetailsRestApi.UserDetailsApi.as_view()),
+    path('api/userdetails/<int:pk>/', UserDetailsRestApi.UserDetailsUpdateDeleteApi.as_view()), 
+    
+    path('api/userquali', QualiRestApi.QualiUserApi.as_view()),
+    path('api/userquali/<int:pk>/', QualiRestApi.QualiUserUpdateDeleteApi.as_view()),
+    
+    path('api/userexperiance', UserExperianceRestApi.UserExperianceApi.as_view()),
+    path('api/userexperiance/<int:pk>/', UserExperianceRestApi.UserExperianceUpdateDeleteApi.as_view()),
+     
+    
     
     
 ]

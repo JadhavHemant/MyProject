@@ -16,21 +16,9 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path
-from MyApp import TopicRestApi
-from MyApp import ContentRestApi
-from MyApp import PostcategoriesApis
-from MyApp import StatesRestApi
-from MyApp import CityRestApi
-from MyApp import LocationRestApi
-from MyApp import QualificationsRestApi
-from MyApp import SpecializationsRestApi
-from MyApp import RolesRestApi
-from MyApp import GendersRestApi
-from MyApp import DesignationsRestApi
-from MyApp import UserDetailsRestApi
-from MyApp import QualiRestApi
-from MyApp import UserExperianceRestApi
-from MyApp import UserProfessionalExpertiseRestApi
+from MyApp.Apis import TopicRestApi,ContentRestApi,PostcategoriesApis,StatesRestApi,CityRestApi,LocationRestApi,QualificationsRestApi,SpecializationsRestApi
+from MyApp.Apis import RolesRestApi,GendersRestApi,DesignationsRestApi,UserDetailsRestApi,QualiRestApi,UserExperianceRestApi,UserProfessionalExpertiseRestApi
+ 
 
 urlpatterns = [
     

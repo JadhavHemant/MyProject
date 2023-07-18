@@ -18,15 +18,19 @@ Including another URLconf
 from django.urls import path
 from MyApp.Apis import TopicRestApi,ContentRestApi,PostcategoriesApis,StatesRestApi,CityRestApi,LocationRestApi,QualificationsRestApi,SpecializationsRestApi
 from MyApp.Apis import RolesRestApi,GendersRestApi,DesignationsRestApi,UserDetailsRestApi,QualiRestApi,UserExperianceRestApi,UserProfessionalExpertiseRestApi
- 
+from MyApp.Apis import UserPostRestApi,CommentPostRestApi,PostCommentReplyRestApi
 
 urlpatterns = [
+                     # Topic Apis
+    path('api/topic', TopicRestApi.TopicApi.as_view()),  # GET AND POST data in apis/topic
+    path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()), # update/delete/ data in apis/topic
+    path('api/topic/content/<int:topic_id>/', TopicRestApi.TopicWiseContentApi.as_view()),
     
-    path('api/topic', TopicRestApi.TopicApi.as_view()),
-    path('api/topic/<int:pk>/', TopicRestApi.TopicUpdateDeleteApi.as_view()),
-    
+                    # Content Apis
     path('api/content',ContentRestApi.ContentApi.as_view()),
     path('api/content/<int:pk>/', ContentRestApi.ContentUpdateDeleteApi.as_view()),
+    
+    
     
     path('api/postcate', PostcategoriesApis.PostCategoryApi.as_view()),
     path('api/postcate/<int:pk>/', PostcategoriesApis.PostCategoryUpdateDeleteApi.as_view()),
@@ -67,8 +71,19 @@ urlpatterns = [
     path('api/userproexp', UserProfessionalExpertiseRestApi.UserProfessionalExpertiseApi.as_view()),
     path('api/userproexp/<int:pk>/', UserProfessionalExpertiseRestApi.UserProfessionalExpertiseUpdateDeleteApi.as_view()),
      
-    # path('api/', UserProfessionalExpertiseRestApi.UserProfessionalExpertiseApi.as_view()),
-    # path('api/userexperiance/<int:pk>/', UserProfessionalExpertiseRestApi.UserProfessionalExpertiseUpdateDeleteApi.as_view()),
+    path('api/userpost', UserPostRestApi.UsePostApi.as_view()),
+    path('api/userpost/<int:pk>/', UserPostRestApi.UsePostUpdateDeleteApi.as_view()),
+    
+    path('api/commentpost', CommentPostRestApi.CommentPostApi.as_view()),
+    path('api/commentpost/<int:pk>/', CommentPostRestApi.CommentPostUpdateDeleteApi.as_view()),
+    
+    path('api/commentpostreply', PostCommentReplyRestApi.PostCommentReplyApi.as_view()),
+    path('api/commentpostreply/<int:pk>/', PostCommentReplyRestApi.PostCommentReplyUpdateDeleteApi.as_view()),
+    
+    # path('api/CommentPost', CommentPostRestApi.CommentPostApi.as_view()),
+    # path('api/CommentPost/<int:pk>/', CommentPostRestApi.CommentPostUpdateDeleteApi.as_view()),
+    
+    
      
     
     

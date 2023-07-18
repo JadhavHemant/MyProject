@@ -17,6 +17,14 @@ class TopicApi(APIView):
             serializer.save()
             return  Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+
+class TopicWiseContentApi(APIView):
+    def get(self, request, topic_id):
+        content = ContentModel.objects.filter(topic_id=topic_id)
+        serializer = ContentSerializer(content, many=True)
+        return Response(serializer.data)    
+    
+    
     
 class TopicUpdateDeleteApi(APIView):
     def get_object(self,pk):

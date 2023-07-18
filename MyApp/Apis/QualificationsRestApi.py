@@ -16,6 +16,9 @@ class QualiApi(APIView):
             serializer.save()
             return  Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+ 
+ 
+ 
     
 class QualiUpdateDeleteApi(APIView):
     def get_object(self,pk):

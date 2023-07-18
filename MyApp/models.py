@@ -145,7 +145,7 @@ class UserDetailsModel(models.Model):
         user_photo = models.CharField(max_length=100)
         mobile_number= models.CharField(max_length=20)
         emial_address = models.CharField(max_length=100)
-        user_name= models.CharField(max_length=100)
+        user_name= models.CharField(max_length=100,unique=True)
         is_premium = models.IntegerField(default=0)
         password = models.CharField(max_length=100)
         flag= models.IntegerField(default=0)

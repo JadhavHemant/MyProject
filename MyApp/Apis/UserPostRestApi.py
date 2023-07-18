@@ -5,34 +5,35 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-class QualiUserApi(APIView):
+class UsePostApi(APIView):
     def get(self, request,format=None):
-        model=UserDetailsModel.objects.all()
-        serializer=UserDetailsSerializer(model,many=True)
+        model=UserPostModel.objects.all()
+        serializer=UserPostSerializer(model,many=True)
         return Response(serializer.data)
 
     def post(self,request,format=True):
-        serializer=UserDetailsSerializer(data=request.data)
+        serializer=UserPostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return  Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+   
     
-class QualiUserUpdateDeleteApi(APIView):
+class UsePostUpdateDeleteApi(APIView):
     def get_object(self,pk):
         try:
-            return UserDetailsModel.objects.get(pk=pk)
-        except UserDetailsModel.DoesNotExist:
+            return UserPostModel.objects.get(pk=pk)
+        except UserPostModel.DoesNotExist:
             raise status.HTTP_404_NOT_FOUND   
         
     def get(self, request, pk, format=None):
         topic = self.get_object(pk)
-        serializer = UserDetailsSerializer(topic)
+        serializer = UserPostSerializer(topic)
         return Response(serializer.data)
     
     def put(self, request, pk, format=None):
         model = self.get_object(pk)
-        serializer = UserDetailsSerializer(model,data=request.data)
+        serializer = UserPostSerializer(model,data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data,status=status.HTTP_200_OK)
@@ -43,6 +44,7 @@ class QualiUserUpdateDeleteApi(APIView):
         model.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
+
 
 
 

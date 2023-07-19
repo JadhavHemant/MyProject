@@ -5,35 +5,35 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-class CommentPostApi(APIView):
+class PostLikesSharesApi(APIView):
     def get(self, request,format=None):
-        model=PostComment.objects.all()
-        serializer=PostCommentSerializer(model,many=True)
+        model=CommentPostReplyModel.objects.all()
+        serializer=CommentPostReplySerializer(model,many=True)
         return Response(serializer.data)
 
     def post(self,request,format=True):
-        serializer=PostCommentSerializer(data=request.data)
+        serializer=CommentPostReplySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return  Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
    
     
-class CommentPostUpdateDeleteApi(APIView):
+class PostLikesSharesUpdateDeleteApi(APIView):
     def get_object(self,pk):
         try:
-            return PostComment.objects.get(pk=pk)
-        except PostComment.DoesNotExist:
+            return CommentPostReplyModel.objects.get(pk=pk)
+        except CommentPostReplyModel.DoesNotExist:
             raise status.HTTP_404_NOT_FOUND   
         
     def get(self, request, pk, format=None):
         topic = self.get_object(pk)
-        serializer = PostCommentSerializer(topic)
+        serializer = CommentPostReplySerializer(topic)
         return Response(serializer.data)
     
     def put(self, request, pk, format=None):
         model = self.get_object(pk)
-        serializer = PostCommentSerializer(model,data=request.data)
+        serializer = CommentPostReplySerializer(model,data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data,status=status.HTTP_200_OK)

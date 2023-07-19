@@ -16,9 +16,9 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path
-from MyApp.Apis import TopicRestApi,ContentRestApi,PostcategoriesApis,StatesRestApi,CityRestApi,LocationRestApi,QualificationsRestApi,SpecializationsRestApi
+from MyApp.Apis import PostCommeRestApi, TopicRestApi,ContentRestApi,PostcategoriesApis,StatesRestApi,CityRestApi,LocationRestApi,QualificationsRestApi,SpecializationsRestApi
 from MyApp.Apis import RolesRestApi,GendersRestApi,DesignationsRestApi,UserDetailsRestApi,QualiRestApi,UserExperianceRestApi,UserProfessionalExpertiseRestApi
-from MyApp.Apis import UserPostRestApi,CommentPostRestApi,PostCommentReplyRestApi
+from MyApp.Apis import UserPostRestApi,CommentPostRestApi,PostLikeRestApi
 
 urlpatterns = [
                      # Topic Apis
@@ -77,15 +77,11 @@ urlpatterns = [
     path('api/commentpost', CommentPostRestApi.CommentPostApi.as_view()),
     path('api/commentpost/<int:pk>/', CommentPostRestApi.CommentPostUpdateDeleteApi.as_view()),
     
-    path('api/commentpostreply', PostCommentReplyRestApi.PostCommentReplyApi.as_view()),
-    path('api/commentpostreply/<int:pk>/', PostCommentReplyRestApi.PostCommentReplyUpdateDeleteApi.as_view()),
+    path('api/commentpostreply', PostCommeRestApi.PostCommentReplyApi.as_view()),
+    path('api/commentpostreply/<int:pk>/', PostCommeRestApi.PostCommentReplyUpdateDeleteApi.as_view()),
     
-    # path('api/CommentPost', CommentPostRestApi.CommentPostApi.as_view()),
-    # path('api/CommentPost/<int:pk>/', CommentPostRestApi.CommentPostUpdateDeleteApi.as_view()),
+    path('api/CommentPost', PostLikeRestApi.PostLikeApi.as_view()),
+    path('api/CommentPost/<int:pk>/', PostLikeRestApi.PostLikeUpdateDeleteApi.as_view()),
     
-    
-     
-    
-    
-    
+        
 ]

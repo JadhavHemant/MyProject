@@ -166,7 +166,7 @@ class PostCommentSerializer(serializers.ModelSerializer):
         
         
 # ---------------------------post_comment_replys Serializer ------------------------
-
+# API Done crud 
 class PostCommentReplysSerializer(serializers.ModelSerializer):
     comment_id=PrimaryKeyRelatedField(queryset=PostCommentsModel.objects.all(),many=False)
     reply_by_user=PrimaryKeyRelatedField(queryset=UserDetailsModel.objects.all(),many=False)
@@ -176,6 +176,7 @@ class PostCommentReplysSerializer(serializers.ModelSerializer):
  
  
  # ---------------------------post_likes_dislikes Serializer ------------------------
+# API Done crud 
 
 class PostLikesDislikesSerializer(serializers.ModelSerializer):
     post_id=PrimaryKeyRelatedField(queryset=PostCommentsModel.objects.all(),many=False)
@@ -186,7 +187,7 @@ class PostLikesDislikesSerializer(serializers.ModelSerializer):
         
         
 # ---------------------------post_likes_shares Serializer ------------------------
-
+# API done Crud
 class PostLikesSharesSerializer(serializers.ModelSerializer):
     post_id=PrimaryKeyRelatedField(queryset=PostCommentsModel.objects.all(),many=False)
     share_by_user=PrimaryKeyRelatedField(queryset=UserDetailsModel.objects.all(),many=False)
@@ -197,6 +198,7 @@ class PostLikesSharesSerializer(serializers.ModelSerializer):
       
         
 # ---------------------------Admin_Details Serializer ------------------------
+# API done Crud
 
 class AdminDetailsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -205,6 +207,7 @@ class AdminDetailsSerializer(serializers.ModelSerializer):
         
                
 # ---------------------------CodePost Serializer ------------------------
+# API done Crud
 
 class CodePostSerializer(serializers.ModelSerializer):
     user_id=PrimaryKeyRelatedField(queryset=UserDetailsModel.objects.all(),many=False)
@@ -215,6 +218,7 @@ class CodePostSerializer(serializers.ModelSerializer):
         
         
 # ---------------------------tbpost_comments Serializer ------------------------
+# API done Crud
 
 class PostCommentSerializer(serializers.ModelSerializer):
     post_id=PrimaryKeyRelatedField(queryset=CodePostModel.objects.all(),many=False) 
@@ -224,8 +228,8 @@ class PostCommentSerializer(serializers.ModelSerializer):
         fields=['id','post_id','comment_date','comment_by_user','comment_message','comment_photo','flag']
         
 # ---------------------------tbpost_comment_replys Serializer ------------------------
-
-class PostCommentReplysSerializer(serializers.ModelSerializer):
+#done Apis
+class PostCommReplysSerializer(serializers.ModelSerializer):
     comment_id=PrimaryKeyRelatedField(queryset=PostComment.objects.all(),many=False)
     reply_by_user=PrimaryKeyRelatedField(queryset=ContentModel.objects.all(),many=False)   
     class Meta:
@@ -233,6 +237,7 @@ class PostCommentReplysSerializer(serializers.ModelSerializer):
         fields=['id','comment_id','reply_date','reply_by_user','reply_mesage','comment_photo','flag']
                  
 # ---------------------------tbpost_likes_dislikes Serializer ------------------------
+# API done Crud
 
 class PostLikesDislikesSerializer(serializers.ModelSerializer):
     post_id=PrimaryKeyRelatedField(queryset=CodePostModel.objects.all(),many=False)
@@ -243,6 +248,7 @@ class PostLikesDislikesSerializer(serializers.ModelSerializer):
 
         
 # ---------------------------tblpost_likes_shares Serializer ------------------------
+# API done Crud
 
 class LikesSharesPostSerializer(serializers.ModelSerializer):
     post_id=PrimaryKeyRelatedField(queryset=CodePostModel.objects.all(),many=False)
@@ -253,6 +259,7 @@ class LikesSharesPostSerializer(serializers.ModelSerializer):
           
                 
 # ---------------------------JobOpenings Serializer ------------------------
+# API done Crud
 
 class JobOpeningslSerializer(serializers.ModelSerializer):
     opening_by=PrimaryKeyRelatedField(queryset=UserDetailsModel.objects.all(),many=False)
@@ -261,6 +268,7 @@ class JobOpeningslSerializer(serializers.ModelSerializer):
         fields=['id','opening_date','opening_by','company_name','job_title','experience_required','job_description','is_active','flag']
                                 
 # ---------------------------post_comments Serializer ------------------------
+# API done Crud
 
 class CommentPostSerializer(serializers.ModelSerializer):
     opening_id=PrimaryKeyRelatedField(queryset=JobOpeningsModel.objects.all(),many=False)
@@ -271,6 +279,7 @@ class CommentPostSerializer(serializers.ModelSerializer):
         
 
 # ---------------------------post_comment_replys Serializer ------------------------
+# API done Crud
 
 class CommentPostReplySerializer(serializers.ModelSerializer):
     comment_id=PrimaryKeyRelatedField(queryset=CommentPostModel.objects.all(),many=False)
@@ -281,6 +290,7 @@ class CommentPostReplySerializer(serializers.ModelSerializer):
 
 
 # ---------------------------post_likes_dislikes Serializer ------------------------
+# API done Crud
 
 class PostDislikeSerializer(serializers.ModelSerializer):
     opening_id=PrimaryKeyRelatedField(queryset=JobOpeningsModel.objects.all(),many=False)
@@ -291,6 +301,7 @@ class PostDislikeSerializer(serializers.ModelSerializer):
        
        
 # ---------------------------lpost_likes_shares Serializer ------------------------
+# API done Crud
 
 class PostLikesSharesTableSerializer(serializers.ModelSerializer):
     opening_id=PrimaryKeyRelatedField(queryset=JobOpeningsModel.objects.all(),many=False)
@@ -302,6 +313,7 @@ class PostLikesSharesTableSerializer(serializers.ModelSerializer):
  
 
 # ---------------------------updates Serializer ------------------------
+# API done Crud
 
 class UpdateModelSerializer(serializers.ModelSerializer):
     class Meta:

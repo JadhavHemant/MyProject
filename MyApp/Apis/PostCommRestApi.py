@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-class CommentPostApi(APIView):
+class PostCommentApi(APIView):
     def get(self, request,format=None):
         model=PostComment.objects.all()
         serializer=PostCommentSerializer(model,many=True)
@@ -19,7 +19,7 @@ class CommentPostApi(APIView):
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
    
     
-class CommentPostUpdateDeleteApi(APIView):
+class PostCommentUpdateDeleteApi(APIView):
     def get_object(self,pk):
         try:
             return PostComment.objects.get(pk=pk)
